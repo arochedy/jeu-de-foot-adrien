@@ -1,0 +1,61 @@
+<?php
+session_start();
+// on vérifie toujours qu'il s'agit d'un membre qui est connecté
+if (!isset($_SESSION['login'])) {
+	// si ce n'est pas le cas, on le redirige vers l'accueil
+	header ('Location: index.php');
+	exit();
+}
+?>
+
+<html>
+<head>
+<title>Liste des matchs</title>
+</head>
+
+<body>
+<a href="membre.php">Retour à l'accueil</a><br /><br />
+<?php
+
+include_once('fonctions.php');
+	  $connexion = new Fonctions;
+	  $connexion->connexion();
+
+
+	$sql = 'SELECT date,idext,scoredom,scoreext,fini FROM espacem.match WHERE id_dom="'.$_SESSION['id'].'" OR idext="'.$_SESSION['id'].'" AND valide="1"';
+
+	$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+	$nb = mysql_num_rows($req);
+
+	if ($nb == 0) {
+		echo 'Aucun match reconnu.';
+	}
+	else {
+		// si le message a été trouvé, on l'affiche
+		
+		$data = mysql_fetch_array($req);
+		
+		if($data['id_expediteur']!=7)
+		{
+		echo $data['date'] , ' - ' , stripslashes(htmlentities(trim($data['titre']))) , '</a> [ Message de ' , stripslashes(htmlentities(trim($data['expediteur']))) , ' ]<br /><br />';
+		echo nl2br(stripslashes(htmlentities(trim($data['message']))));
+		}
+		else
+		{
+		//echo $data['date'] , ' - ' , stripslashes(htmlentities(trim($data['titre']))) , '</a> [ Message officiel ]<br /><br />';
+		echo $data['message'];
+		
+		}
+		// on affiche également un lien permettant de supprimer ce message de la boite de réception
+		echo '<br /><br /><a href="supprimer.php?id_message=' , $_GET['id_message'] , '">Supprimer ce message</a>';
+		
+	}
+	
+	$sql2='UPDATE espacem.messages SET lu="1" WHERE id="'.$_GET['id_message'].'"';
+				mysql_query($sql2) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
+
+}
+?>
+<br /><br /><a href="deconnexion.php">Déconnexion</a>
+</body>
+</html>

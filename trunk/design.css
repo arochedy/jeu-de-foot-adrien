@@ -1,0 +1,224 @@
+
+
+body
+{
+	width: 1024px;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;    
+	/*background-image: url("img/fond.jpg");*/
+	background-repeat:repeat;
+	background-position:center; 
+	background-color: #AA2BFF;
+}
+
+/* L'en-tête */
+
+#en_tete
+{
+	width: 1024px;
+	height: 134px;
+	background-image: url("img/image.php");
+	background-repeat: no-repeat;
+	margin-bottom: 10px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+}
+
+#en_tete li
+{
+list-style-type: none; 
+}
+
+
+/* Le menu */
+
+#menu
+{
+	float: left;
+	width: 180px;
+	list-style-type: none; 
+	
+}
+
+.element_menu
+{
+	background-color: #BB35FF;
+	background-image: url("img/motif.png");
+	background-repeat: repeat-x;
+   
+	border: 2px solid black;
+   
+	margin-bottom: 20px;
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+}
+
+
+/* Quelques effets sur les menus */
+
+
+.element_menu h3
+{    
+	color: #B3B3B3;
+	font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+	text-align: center;
+}
+
+.element_menu ul
+{
+	list-style-image: url("img/puce.png");
+	padding: 0px;
+	padding-left: 20px;
+	margin: 0px;
+	margin-bottom: 5px;
+}
+
+.element_menu a
+{
+	color: #B3B3B3;
+	text-decoration: none
+}
+
+/*.element_menu a:hover
+{
+	background-color: #;
+	color: black;
+	text-decoration: none
+}*/
+.element_menu li
+{
+	border-outset: 0.5px solid black;
+	list-style-type: none; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+	text-align: center;
+	width: 140px;
+	margin-right : auto;
+	background-color: #7F006E;
+	/*padding: 5px;*/
+}
+
+.element_menu li:hover
+{
+	border-outset: 0.5px solid black;
+	list-style-type: none; 
+	-moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+	text-align: center;
+	width: 140px;
+	margin-right : auto;
+	background-color: blue;
+	/*padding: 5px;*/
+}
+
+
+
+/* Le corps de la page */
+
+#corps
+{
+   margin-left: 200px;
+   margin-bottom: 20px;
+   padding: 5px;
+   
+   color: #FFFFFF;
+   background-color: #98FA00;
+   background-image: url("img/fond.jpg");
+   background-repeat: repeat;
+   text-align: justify;  
+   border: 2px solid black;
+   -moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+}
+
+#corps h1
+{
+   color: #FF0000;
+   text-align: center;
+   font-family: Arial, "Arial Black", "Times New Roman", Times, serif;
+}
+
+#corps h2
+{
+   height: 30px;
+
+   background-image: url("images/titre.png");
+   background-repeat: no-repeat;
+   
+   padding-left: 30px;
+   color: #FF0000;
+   text-align: left;
+}
+
+
+/* Le pied de page (qui se trouve tout en bas, en général pour les copyrights) */
+
+#bas
+{
+   /*padding: 5px;*/
+   clear: both;
+
+   text-align: center;
+
+   color: #B3B3B3;
+   background-color: #7F006E;
+   /*background-image: url("images/motif.png");*/
+   background-repeat: repeat-x;
+   
+   border: 2px solid black;
+   -moz-border-radius:5px; 
+	-webkit-border-radius:5px; 
+	border-radius:5px; 
+	
+}
+ul { 
+list-style-type: none; 
+} 
+
+ou 
+
+li { 
+list-style-type: none; 
+} 
+
+
+/*
+#onglets
+{
+	font : bold 11px Batang, arial, serif;
+	list-style-type : none;
+    padding-bottom : 24px; /* à modifier suivant la taille de la police ET de la hauteur de l'onglet dans #onglets li 
+    border-bottom : 1px solid #9EA0A1;
+    margin-left : 0;
+}
+#onglets li
+{
+    float : left;
+    height : 21px; /* à modifier suivant la taille de la police pour centrer le texte dans l'onglet 
+    background-color: #F4F9FD;
+    margin : 2px 2px 0 2px !important;  /* Pour les navigateurs autre que IE 
+    margin : 1px 2px 0 2px;  /* Pour IE  
+    border : 1px solid #9EA0A1;
+}
+#onglets li.active
+{
+    border-bottom: 1px solid #fff;
+    background-color: #fff;
+}
+#onglets a
+{
+    display : block;
+    color : #666;
+    text-decoration : none;
+    padding : 4px;
+}
+#onglets a:hover
+{
+    background : #fff;
+}*/

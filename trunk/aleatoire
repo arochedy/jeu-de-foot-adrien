@@ -1,0 +1,19 @@
+<?php
+
+
+$numposte=1;
+while($numposte%2!=0)
+{
+$numposte=rand(0,4);
+if($numpost%2==0)
+{
+
+}
+}
+echo $numposte,"&nbsp; /";
+
+
+
+
+
+?>
