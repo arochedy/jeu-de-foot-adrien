@@ -47,7 +47,7 @@ class Fonctions
 	function connexion()
 	{
 	$base = mysql_connect ('localhost', 'root', '');
-		mysql_select_db ('espacem', $base);
+		mysql_select_db ('lefande4', $base);
 	}
 	
     

@@ -21,12 +21,12 @@ include_once('fonctions.php');
 			$idj=$_POST['idj'];
 		if($action=="ajouter")
 		{
-		$sql = 'UPDATE `espacem`.`joueur` SET  titulaire="1" WHERE idjoueur ="'.$idj.'"';
+		$sql = 'UPDATE joueur SET  titulaire="1" WHERE idjoueur ="'.$idj.'"';
 		$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
 		} 
 		if ($action=="enlever")
 		{
-		$sql = 'UPDATE `espacem`.`joueur` SET  titulaire="0" WHERE idjoueur ="'.$idj.'"';
+		$sql = 'UPDATE joueur SET  titulaire="0" WHERE idjoueur ="'.$idj.'"';
 		$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
 		}
 	}
@@ -64,14 +64,11 @@ include_once('fonctions.php');
 	if($nbgac==0)
 		echo "Attention vous n'avez pas de gardien titulaire !<br><br>";
 	  
-	$sql = 'SELECT nom,prenom,idjoueur as idj,poste,titulaire FROM joueur WHERE idclub="'.$_SESSION['id'].'" ORDER BY poste ';
+	  //Affichage de la liste des joueurs
+	$sql = 'SELECT nom,prenom,idjoueur as idj,poste,titulaire FROM joueur WHERE idclub="'.$_SESSION['id'].'" ORDER BY titulaire DESC, poste ';
 	$req = mysql_query($sql) or die('Erreur SQL !<br />'.$sql.'<br />'.mysql_error());
 
 	$nb = mysql_num_rows($req);
-	
-	
-
-	
 	if ($nb == 0)
 	{
 		echo 'Vous n\'avez aucun Joueurs.';
