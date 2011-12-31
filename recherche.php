@@ -21,14 +21,14 @@ if (!isset($_SESSION['login'])) {
 <form action="resultatr.php" method="post">
 
 
-Nom<input type="checkbox" name="joueur[]" value="nom " />
-<input type="text" name="nom" id="pseudo" tabindex="20"/><br />
+Nom<input type="checkbox" name="joueur[]" value="nom" />
+<input type="text" name="nom" id="pseudo" /><br />
 
- Age<input type="checkbox" name="joueur[]" value="age " />
-<input type="text" name="agemin" id="pseudo" tabindex="2"/>
-<input type="text" name="agemax" id="pseudo" tabindex="2"/><br />
+ Age<input type="checkbox" name="joueur[]" value="age" />
+<input type="text" name="agemin" id="pseudo" size="2" maxlength="2"/>
+<input type="text" name="agemax" id="pseudo" size="2" maxlength="2"/><br />
 
-Talent <input type="checkbox" name="joueur[]" value="talent " /><br />
+Talent <input type="checkbox" name="joueur[]" value="talent" /><br />
 Attaque  <input type="checkbox" name="joueur[]" value="attaque" /><br />
 <input type="submit" />
 
